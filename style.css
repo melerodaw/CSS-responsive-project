@@ -1,0 +1,50 @@
+/* Fuentes: Playfair Display - títulos h1 y h2; Montserrat - cuerpo de la página*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img {
+    max-width: 100%;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Montserrat';
+}
+
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 5%;
+}
+header nav {
+    width: 50%;
+}
+header ul { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header li {
+    list-style: none;
+}
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Landing page */

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto — Proyecto Neptuno</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div>
+            <a href="./index.html"><img src="./img/logo.png" alt="Logo CC Neptuno"></a>
+        </div>
+
+        <input type="checkbox" id="btn-menu">
+        <label for="btn-menu" class="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </label>
+
+        <nav>
+            <ul>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./ocio.html">Cultura y ocio</a></li>
+                <li><a href="./gastro.html">Gastronomía y salud</a></li>
+                <li><a href="./arquitectura.html">Proyecto Neptuno</a></li>
+                <li><a href="./contact.html" class="nav-active">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+       <main>
+
+        <!-- Cabecera de página -->
+        <section class="page-hero">
+            <span class="page-hero__label">Hablemos</span>
+            <h1>Contacto</h1>
+            <p>El Proyecto Neptuno se construye con personas. Cuéntanos quién eres y de qué quieres hablar.</p>
+        </section>
+
+        <!-- Sección de contacto -->
+        <section class="contact-section">
+            <div class="contact-wrapper">
+
+                <form class="contact-form" action="#" method="POST">
+
+                    <!-- CAMPOS COMUNES -->
+                    <div class="common-fields">
+                        <div class="form-row form-row--two">
+                            <div class="form-group">
+                                <label for="nombre">Nombre <span class="required">*</span></label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="given-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo electrónico <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" placeholder="tu@email.com" required autocomplete="email">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TÍTULO DE TABS -->
+                    <div class="tabs-heading">
+                        <span>¿Quién eres?</span>
+                    </div>
+
+                    <!--
+                        RADIO INPUTS OCULTOS
+                        Deben estar antes de las pestañas y los bloques de campos
+                        para que el selector ~ (hermano siguiente) funcione.
+                    -->
+                    <input type="radio" id="p-inversor" name="perfil" value="inversor" class="radio-perfil">
+                    <input type="radio" id="p-marca" name="perfil" value="marca" class="radio-perfil">
+                    <input type="radio" id="p-prensa" name="perfil" value="prensa" class="radio-perfil">
+                    <input type="radio" id="p-ciudadano" name="perfil" value="ciudadano" class="radio-perfil">
+
+                    <!-- PESTAÑAS -->
+                    <div class="profile-tabs">
+                        <label for="p-inversor" class="tab">Inversor</label>
+                        <label for="p-marca" class="tab">Marca</label>
+                        <label for="p-prensa" class="tab">Prensa</label>
+                        <label for="p-ciudadano" class="tab">Ciudadano</label>
+                    </div>
+
+                    <!-- CAMPOS INVERSOR -->
+                    <div id="fields-inversor" class="profile-fields">
+                        <div class="form-row form-row--two">
+                            <div class="form-group">
+                                <label for="inv-empresa">Empresa u organización</label>
+                                <input type="text" id="inv-empresa" name="inv_empresa" placeholder="Nombre de la empresa">
+                            </div>
+                            <div class="form-group">
+                                <label for="inv-cargo">Cargo</label>
+                                <input type="text" id="inv-cargo" name="inv_cargo" placeholder="Tu rol en la empresa">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="inv-rango">Rango de inversión estimada</label>
+                                <div class="select-wrapper">
+                                    <select id="inv-rango" name="inv_rango">
+                                        <option value="" disabled selected>Selecciona un rango</option>
+                                        <option value="menos500">Menos de 500.000 €</option>
+                                        <option value="500k-2m">Entre 500.000 € y 2.000.000 €</option>
+                                        <option value="mas2m">Más de 2.000.000 €</option>
+                                        <option value="determinar">Por determinar</option>
+                                    </select>
+                                    <span class="select-arrow" aria-hidden="true">↓</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="inv-mensaje">Mensaje</label>
+                                <textarea id="inv-mensaje" name="inv_mensaje" rows="5" placeholder="Cuéntanos tu interés o las condiciones que buscas..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CAMPOS MARCA -->
+                    <div id="fields-marca" class="profile-fields">
+                        <div class="form-row form-row--two">
+                            <div class="form-group">
+                                <label for="mrc-negocio">Nombre del negocio</label>
+                                <input type="text" id="mrc-negocio" name="mrc_negocio" placeholder="Nombre de tu marca o local">
+                            </div>
+                            <div class="form-group">
+                                <label for="mrc-sector">Sector</label>
+                                <div class="select-wrapper">
+                                    <select id="mrc-sector" name="mrc_sector">
+                                        <option value="" disabled selected>Selecciona un sector</option>
+                                        <option value="hosteleria">Hostelería y restauración</option>
+                                        <option value="retail">Retail y moda</option>
+                                        <option value="cultura">Cultura y ocio</option>
+                                        <option value="salud">Salud y bienestar</option>
+                                        <option value="servicios">Servicios</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                    <span class="select-arrow" aria-hidden="true">↓</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="mrc-metros">Superficie aproximada necesaria (m²)</label>
+                                <input type="number" id="mrc-metros" name="mrc_metros" placeholder="Ej: 120" min="0">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="mrc-mensaje">Mensaje</label>
+                                <textarea id="mrc-mensaje" name="mrc_mensaje" rows="5" placeholder="Cuéntanos qué tipo de espacio buscas y qué ofrecerías..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CAMPOS PRENSA -->
+                    <div id="fields-prensa" class="profile-fields">
+                        <div class="form-row form-row--two">
+                            <div class="form-group">
+                                <label for="prs-medio">Medio o publicación</label>
+                                <input type="text" id="prs-medio" name="prs_medio" placeholder="Nombre del medio">
+                            </div>
+                            <div class="form-group">
+                                <label for="prs-tipo">Tipo de cobertura</label>
+                                <div class="select-wrapper">
+                                    <select id="prs-tipo" name="prs_tipo">
+                                        <option value="" disabled selected>Selecciona un tipo</option>
+                                        <option value="reportaje">Reportaje</option>
+                                        <option value="entrevista">Entrevista</option>
+                                        <option value="documental">Documental</option>
+                                        <option value="podcast">Podcast</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                    <span class="select-arrow" aria-hidden="true">↓</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="prs-mensaje">Ángulo o propuesta</label>
+                                <textarea id="prs-mensaje" name="prs_mensaje" rows="5" placeholder="Explícanos desde qué perspectiva quieres cubrir el proyecto..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CAMPOS CIUDADANO -->
+                    <div id="fields-ciudadano" class="profile-fields">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ciu-motivo">Motivo de contacto</label>
+                                <div class="select-wrapper">
+                                    <select id="ciu-motivo" name="ciu_motivo">
+                                        <option value="" disabled selected>Selecciona un motivo</option>
+                                        <option value="apoyo">Apoyo al proyecto</option>
+                                        <option value="sugerencia">Sugerencia o idea</option>
+                                        <option value="duda">Duda o pregunta</option>
+                                        <option value="critica">Crítica o preocupación</option>
+                                    </select>
+                                    <span class="select-arrow" aria-hidden="true">↓</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ciu-mensaje">Tu mensaje</label>
+                                <textarea id="ciu-mensaje" name="ciu_mensaje" rows="6" placeholder="Cuéntanos lo que piensas. Todas las voces importan en este proyecto."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PIE DEL FORMULARIO -->
+                    <div class="form-footer">
+                        <div class="form-row form-row--checkbox">
+                            <input type="checkbox" id="privacidad" name="privacidad" required>
+                            <label for="privacidad">He leído y acepto la <a href="#">política de privacidad</a> del proyecto. <span class="required">*</span></label>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-copy">2026 Proyecto Neptuno — Propuesta de renovación ficticia para Granada</p>
+            <nav class="footer-nav" aria-label="Navegación secundaria">
+                <a href="./index.html">Inicio</a>
+                <a href="./ocio.html">Cultura y ocio</a>
+                <a href="./gastro.html">Gastronomía</a>
+                <a href="./arquitectura.html">El proyecto</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>
+</body>
+</html>

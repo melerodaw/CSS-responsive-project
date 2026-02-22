@@ -534,6 +534,16 @@ footer {
         border: 1px solid #e0e0e0;
         padding: 0.75rem;
     }
+
+    #p-inversor:checked  ~ .profile-tabs label[for="p-inversor"],
+    #p-marca:checked     ~ .profile-tabs label[for="p-marca"],
+    #p-prensa:checked    ~ .profile-tabs label[for="p-prensa"],
+    #p-ciudadano:checked ~ .profile-tabs label[for="p-ciudadano"] {
+        background-color: var(--color-primario);
+        color: var(--texto-claro);
+        border-color: var(--color-primario);
+        margin-bottom: 0px; 
+    }
 }
 
 @media (max-width: 768px) {

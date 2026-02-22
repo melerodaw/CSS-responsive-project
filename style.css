@@ -179,7 +179,7 @@ header a {
 .btn-primary {
     background-color: var(--color-primario);
     color: var(--texto-claro);
-    border: 1px solid var(--color-primario); /* con este detalle mantiene el pixel de mismo tamaño*/
+    border: 1px solid var(--color-primario); /* con este detalle mantiene el mismo tamaño*/
 }
 
 .btn-primary:hover {
@@ -463,7 +463,7 @@ header a {
 /* ----------------------------------
    FOOTER
 ---------------------------------- */
-.site-footer {
+footer {
     background-color: var(--bg-footer);
     padding: 2.5rem 5%;
 }
@@ -503,7 +503,6 @@ header a {
 /* ----------------------------------
    Responsive
 ---------------------------------- */
-
 @media (max-width: 576px) {
 /*
 index hero: h1 - 2-2.5 rem,  maxwidth -> 90-100%, botones pasan a horizontal
@@ -522,6 +521,27 @@ index hero: h1 - 2-2.5 rem,  maxwidth -> 90-100%, botones pasan a horizontal
     }
 
 
+    
+    
+    /* Formulario */
+    .form-row--two {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-tabs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tab {
+        text-align: center;
+        border-bottom: none;
+        border: 1px solid #e0e0e0;
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
     /* Mostramos la hamburguesa */
     .hamburger {
         display: flex;
@@ -548,21 +568,4 @@ index hero: h1 - 2-2.5 rem,  maxwidth -> 90-100%, botones pasan a horizontal
     #btn-menu:checked ~ nav {
         left: 0;
     } 
-    
-    /* Formulario */
-    .form-row--two {
-        grid-template-columns: 1fr;
-    }
-
-    .profile-tabs {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .tab {
-        text-align: center;
-        border-bottom: none;
-        border: 1px solid #e0e0e0;
-        padding: 0.75rem;
-    }
 }

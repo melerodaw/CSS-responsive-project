@@ -504,10 +504,6 @@ footer {
    Responsive
 ---------------------------------- */
 @media (max-width: 576px) {
-/*
-index hero: h1 - 2-2.5 rem,  maxwidth -> 90-100%, botones pasan a horizontal
-
-*/
     #hero h1 {
         font-size: 2.5rem;
     }
@@ -519,7 +515,6 @@ index hero: h1 - 2-2.5 rem,  maxwidth -> 90-100%, botones pasan a horizontal
         flex-direction: column;
         gap: 10px;
     }
-
 
     
     

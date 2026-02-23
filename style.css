@@ -316,10 +316,6 @@ header a {
     background-color: var(--bg-principal);
 }
 
-.ocio-bloque--dark {
-    background-color: var(--bg-secundario);
-}
-
 /* ----------------------------------
    COLUMNA IMAGEN
 ---------------------------------- */
@@ -359,7 +355,7 @@ header a {
 
 /* Placeholder cuando no hay imagen */
 .ocio-bloque__imagen--placeholder {
-    background-color: var(--texto-oscuro);
+    background-color: var(--texto-muted);
 }
 
 .placeholder-img {
@@ -376,7 +372,7 @@ header a {
     font-weight: 700;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: var(--texto-muted);
+    color: var(--texto-oscuro);
 }
 
 /* ----------------------------------
@@ -689,7 +685,6 @@ header a {
 .gastro-cierre__texto a:hover {
     color: var(--color-primario-claro);
 }
-
 
 /* ================================
    SECCION DE CONTACTO contact.html
@@ -1028,6 +1023,12 @@ footer {
     .proyecto-seccion {
         padding: 3rem 5%;
     }
+
+    .footer-nav {
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem auto;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1058,7 +1059,7 @@ footer {
         left: 0;
     }
 
-        .landing-grid {
+    .landing-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1089,11 +1090,6 @@ footer {
         min-height: auto;
     }
 
-    /* Para el bloque reverse, en escritorio el texto va a la derecha, pero en móvil lo queremos debajo, así que forzamos el orden natural (ltr) */
-    .ocio-bloque--reverse {
-        direction: ltr;
-    }
-
     /* Y para que la imagen vaya antes que el texto, le damos un order negativo */
     .ocio-bloque--reverse .ocio-bloque__imagen {
         order: -1;
@@ -1121,5 +1117,4 @@ footer {
     .gastro-grid {
         grid-template-columns: 1fr ;
     }
-
 }

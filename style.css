@@ -657,11 +657,21 @@ header a {
     color: var(--texto-oscuro);
 }
 
+.contact-section {
+    padding: 5rem 5%;
+}
+
+.contact-wrapper {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
 /* El "*" del form */
 .required {
     color: var(--color-primario);
 }
 
+/* Estilos para inputs, textarea y select. Uso el mismo estilo para los tres para mantener la coherencia visual */
 .form-group input,
 .form-group textarea,
 .form-group select {

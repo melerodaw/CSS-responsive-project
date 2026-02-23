@@ -6,10 +6,10 @@ Montserrat - cuerpo de la página
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
-    /* Colores Principales (Identidad) */
+    /* Colores Principales */
     --color-primario: #8B1D1D;    /* Granate Corporativo (el arco) */
     --color-primario-claro: #A32A2A; /* Para hover y acentos secundarios */
-    --color-secundario: #B89D64;  /* Dorado Champán (acentos premium) */
+    --color-secundario: #B89D64;  /* Dorado Champán (otros acentos) */
     --color-secundario-claro: #E5D1A4; /* Para hover y acentos secundarios */
     
     /* Colores de Superficie y Fondos */
@@ -127,7 +127,7 @@ header a {
     justify-content: center;
     align-items: flex-end;
     text-align: center;
-    height: 90vh;
+    height: 85vh;
     padding-bottom: 8vh;
 }
 
@@ -136,7 +136,6 @@ header a {
     margin: 0 auto;
     padding: 0 20px;
 }
-
 
 #hero h1 {
     font-size: 6rem; 
@@ -203,25 +202,31 @@ header a {
     transform: translateY(-3px);
 }
 
-
+/* ============================================================
+   PROYECTO.HTML — Pegar al final de style.css
+   ============================================================ */
 
 /* ----------------------------------
-   SECCION DE CONTACTO contact.html
+   SECCIONES DE PROYECTO
 ---------------------------------- */
-/* ----------------------------------
-   Page Hero
----------------------------------- */
-.page-hero {
+/* Padding y fondo blanco de base */
+.proyecto-seccion {
+    padding: 5rem 5%;
+    background-color: var(--bg-principal);
+}
+/* Para alternar con un fondo un poco mas oscuro (el blanco humo) */
+.proyecto-seccion--dark {
     background-color: var(--bg-secundario);
-    border-left: 4px solid var(--color-primario);
-    padding: 5rem 5% 4rem;
-    min-height: 30vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
 }
 
-.page-hero__label {
+.proyecto-intro {
+    max-width: 680px;
+    margin: 0 auto 3.5rem;
+    text-align: center;
+}
+
+.seccion-label {
+    display: inline-block;
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 3px;
@@ -230,32 +235,77 @@ header a {
     margin-bottom: 1rem;
 }
 
-.page-hero h1 {
-    font-size: 4.5rem;
+.proyecto-intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
     color: var(--texto-oscuro);
-    line-height: 1;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
-.page-hero p {
+.proyecto-intro p {
     color: var(--texto-muted);
     font-size: 1rem;
     line-height: 1.7;
-    max-width: 500px;
 }
 
-.contact-section {
-    padding: 5rem 5%;
+/* ----------------------------------
+   GRIDS DE RENDERS
+---------------------------------- */
+.render-grid--two {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto 1.5rem;
 }
 
-.contact-wrapper {
-    max-width: 820px;
+.render-grid--one {
+    max-width: 800px;
     margin: 0 auto;
 }
 
 /* ----------------------------------
-   FORMULARIO BASE
+   ITEMS DE RENDER
 ---------------------------------- */
+.render-item {
+    margin: 0;
+    overflow: hidden; /* Para que el zoom no se salga del contenedor */
+}
+
+.render-item--full {
+    max-width: 1200px;
+    margin: 0 auto 1.5rem;
+    display: block;
+}
+
+.render-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.render-item:hover img {
+    transform: scale(1.02);
+}
+
+.render-item figcaption {
+    padding: 0.75rem 0 0;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--texto-muted);
+}
+
+/* ----------------------------------
+   SECCION DE CONTACTO contact.html
+---------------------------------- */
+
+
+/* FORMULARIO BASE */
+
 .form-row {
     margin-bottom: 1.5rem;
 }
@@ -281,7 +331,7 @@ header a {
     color: var(--texto-oscuro);
 }
 
-/* El * del form */
+/* El "*" del form */
 .required {
     color: var(--color-primario);
 }
@@ -548,6 +598,11 @@ footer {
         border-color: var(--color-primario);
         margin-bottom: 0px; 
     }
+
+    /*proyecto.html*/
+    .proyecto-seccion {
+        padding: 3rem 5%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -576,5 +631,14 @@ footer {
     /* CUANDO HACES CLICK: El menú entra */
     #btn-menu:checked ~ nav {
         left: 0;
-    } 
+    }
+
+    /*proyecto.html*/
+    .render-grid--two {
+        grid-template-columns: 1fr;
+    }
+
+    .proyecto-intro h2 {
+        font-size: 1.7rem;
+    }
 }

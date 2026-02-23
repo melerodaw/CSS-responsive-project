@@ -107,9 +107,9 @@ header a {
     border-radius: 3px;
     transition: all 0.3s;
 }
-/* ----------------------------------
+/* ==================================
     SECCION DE BIENVENIDA - LANDING PAGE - index.html
----------------------------------- */
+================================= */
 /* hero section */
 #hero {
     background:
@@ -239,6 +239,150 @@ header a {
 }
 
 /* ============================================================
+   OCIO.HTML — Pegar al final de style.css
+   ============================================================ */
+
+/* ----------------------------------
+   BLOQUES DE OCIO
+---------------------------------- */
+.ocio-bloque {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 70vh;
+    background-color: var(--bg-principal);
+}
+
+.ocio-bloque--dark {
+    background-color: var(--bg-secundario);
+}
+
+/* ----------------------------------
+   COLUMNA IMAGEN
+---------------------------------- */
+.ocio-bloque__imagen {
+    position: relative;
+    overflow: hidden;
+}
+
+.ocio-bloque__imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.ocio-bloque__imagen:hover img {
+    transform: scale(1.03);
+}
+
+/* Imagen de detalle superpuesta (sala interior) */
+.ocio-bloque__imagen-detalle {
+    position: absolute; /* Para superponerla sobre la imagen principal */
+    bottom: 2rem;
+    right: 2rem;
+    width: 45%;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    overflow: hidden; /* Para que el zoom no se salga del contenedor */
+    border: 3px solid var(--bg-principal);
+}
+
+.ocio-bloque__imagen-detalle img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Placeholder cuando no hay imagen */
+.ocio-bloque__imagen--placeholder {
+    background-color: var(--texto-oscuro);
+}
+
+.placeholder-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.placeholder-img span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--texto-muted);
+}
+
+/* ----------------------------------
+   COLUMNA TEXTO
+---------------------------------- */
+.ocio-bloque__texto {
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.ocio-bloque__texto h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--texto-oscuro);
+    line-height: 1.1;
+}
+
+.ocio-bloque__texto p {
+    color: var(--texto-muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    max-width: 480px;
+}
+
+/* ----------------------------------
+   LISTA DE CARACTERÍSTICAS
+---------------------------------- */
+.ocio-lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+}
+
+.ocio-lista li {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--texto-oscuro);
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+/* Guión granate como bullet */
+.ocio-lista li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--color-primario);
+    font-weight: 700;
+}
+
+/* ----------------------------------
+   TEXTO PRÓXIMAMENTE
+---------------------------------- */
+.ocio-proximamente {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-secundario);
+    margin-top: 0.5rem;
+}
+
+
+/* ============================================================
    PROYECTO.HTML
    ============================================================ */
 
@@ -335,9 +479,9 @@ header a {
     color: var(--texto-muted);
 }
 
-/* ----------------------------------
+/* ================================
    SECCION DE CONTACTO contact.html
----------------------------------- */
+================================ */
 
 
 /* FORMULARIO BASE */
@@ -606,8 +750,15 @@ footer {
         gap: 10px;
     }
 
-    
-    
+    /* Ocio */
+    .ocio-bloque__imagen {
+        min-height: 220px;
+    }
+
+    .ocio-bloque__texto h2 {
+        font-size: 1.7rem;
+    }
+
     /* Formulario */
     .form-row--two {
         grid-template-columns: 1fr;
@@ -676,5 +827,42 @@ footer {
 
     .proyecto-intro h2 {
         font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 992px) {
+
+    /* Ocio */
+    .ocio-bloque {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    /* Cancelamos el truco direction en móvil */
+    .ocio-bloque--reverse {
+        direction: ltr;
+    }
+
+    /* En móvil el texto siempre va debajo de la imagen */
+    .ocio-bloque--reverse .ocio-bloque__imagen {
+        order: -1;
+    }
+
+    .ocio-bloque__imagen {
+        min-height: 300px;
+    }
+
+    .ocio-bloque__texto {
+        padding: 3rem 5%;
+    }
+
+    .ocio-bloque__texto h2 {
+        font-size: 2rem;
+    }
+
+    .ocio-bloque__imagen-detalle {
+        width: 40%;
+        bottom: 1rem;
+        right: 1rem;
     }
 }

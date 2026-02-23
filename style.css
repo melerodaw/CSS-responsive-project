@@ -98,7 +98,7 @@ header a {
     z-index: 1001; /* Por encima de todo */
 }
 
-/* Dibujamos las 3 líneas */
+/* Dibujamos las 3 lineas */
 .hamburger .line {
     display: block;
     width: 100%;
@@ -202,8 +202,44 @@ header a {
     transform: translateY(-3px);
 }
 
+/* ----------------------------------
+   PAGE HERO (cabecera interior)
+---------------------------------- */
+.page-hero {
+    background-color: var(--bg-secundario);
+    border-left: 4px solid var(--color-primario);
+    padding: 5rem 5% 4rem;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.page-hero__label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--color-secundario);
+    margin-bottom: 1rem;
+}
+
+.page-hero h1 {
+    font-size: 4.5rem;
+    color: var(--texto-oscuro);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+.page-hero p {
+    color: var(--texto-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 520px;
+}
+
 /* ============================================================
-   PROYECTO.HTML — Pegar al final de style.css
+   PROYECTO.HTML
    ============================================================ */
 
 /* ----------------------------------
